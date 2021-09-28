@@ -14,9 +14,7 @@ def predict():
     # print(type(body))
     # print(body)
     data = body['data']
-    r = smr.invoke_endpoint(
-        EndpointName='xgboost-210924-0315-016-aaedc4f9', Body=data, ContentType='text/csv'
-    )
+    r = smr.invoke_endpoint(EndpointName='MyEndPoint', Body=data, ContentType='text/csv')
     prediction = r['Body'].read().decode('utf-8')
     print(prediction)
     response = {'prediction': prediction}
