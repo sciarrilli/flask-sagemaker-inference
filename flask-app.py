@@ -4,7 +4,7 @@ import boto3
 
 app = Flask(__name__)
 
-smr = boto3.client('sagemaker-runtime')
+smr = boto3.client('sagemaker-runtime', region_name='awsRegion')
 
 
 @app.route('/pred', methods=['POST'])
